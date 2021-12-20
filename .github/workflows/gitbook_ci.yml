@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'gitbook_src/*'
 jobs:
   build:
     runs-on: ubuntu-latest
