@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+    # paths:
+    #   - 'gitbook_src/*'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,8 +15,11 @@ jobs:
 
     - name: Build
       run: |
-        cd {{$GITHUB_WORKSPACE/gitbook_src}}
-        ls
+        rm -rf docs
+        cd gitbook_src
+        gitbook build
+        cd ..
+        mv gitbook_src/_book docs
         echo "gitbook build"
 
     - name: deploy
