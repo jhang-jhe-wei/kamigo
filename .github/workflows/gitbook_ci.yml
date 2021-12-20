@@ -2,7 +2,7 @@ name: 'Gitbook CI'
 on:
   push:
     paths:
-      - 'gitbook/*'
+      - 'gitbook_src/*'
 jobs:
   build:
     runs-on: ubuntu-latest
