@@ -1,6 +1,8 @@
 name: 'Gitbook CI'
 on:
   push:
+    branches:
+      - master
     paths:
       - 'gitbook_src/*'
 jobs:
@@ -12,6 +14,8 @@ jobs:
 
     - name: Build
       run: |
+        cd {{$GITHUB_WORKSPACE/gitbook_src}}
+        ls
         echo "gitbook build"
 
     - name: deploy
